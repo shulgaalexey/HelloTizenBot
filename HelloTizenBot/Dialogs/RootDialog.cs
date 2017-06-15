@@ -5,7 +5,7 @@ using Microsoft.Bot.Connector;
 
 namespace HelloTizenBot.Dialogs
 {
-    [Serializable]
+    /*[Serializable]
     public class RootDialog : IDialog<object>
     {
         public Task StartAsync(IDialogContext context)
@@ -27,5 +27,5 @@ namespace HelloTizenBot.Dialogs
 
             context.Wait(MessageReceivedAsync);
         }
-    }
+    }*/
 }
