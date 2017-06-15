@@ -1,16 +1,16 @@
-﻿namespace HelloTizenBot.Dialogs
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using System.Web;
-    using Microsoft.Bot.Builder.Dialogs;
-    using Microsoft.Bot.Builder.FormFlow;
-    using Microsoft.Bot.Builder.Luis;
-    using Microsoft.Bot.Builder.Luis.Models;
-    using Microsoft.Bot.Connector;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Web;
+using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Builder.FormFlow;
+using Microsoft.Bot.Builder.Luis;
+using Microsoft.Bot.Builder.Luis.Models;
+using Microsoft.Bot.Connector;
 
+namespace HelloTizenBot.Dialogs
+{
     [LuisModel("64f464ab-0f2a-4412-9be1-af3e7fca947b", "d14db6f08ac845cda0873c80437bbb97&")]
     [Serializable]
     public class RootLuisDialog : LuisDialog<object>
