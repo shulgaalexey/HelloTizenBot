@@ -20,7 +20,7 @@ namespace HelloTizenBot.Dialogs
             /*context.Wait(this.MessageReceived);
 
             return Task.CompletedTask;*/
-            string message = $"Hi man";
+            string message = $"Hi man, how are you doing?";
             await context.PostAsync(message);
             //context.Wait(this.MessageReceived);
         }
