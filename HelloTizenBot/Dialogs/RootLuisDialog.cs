@@ -19,7 +19,8 @@ namespace HelloTizenBot.Dialogs
         [LuisIntent("None")]
         public async Task None(IDialogContext context, LuisResult result)
         {
-            string message = $"Sorry, I did not understand '{result.Query}'. Type 'help' if you need assistance.";
+            //string message = $"Sorry, I did not understand '{result.Query}'. Type 'help' if you need assistance.";
+            string message = $"Sorry, I did not understand";
             await context.PostAsync(message);
             context.Wait(this.MessageReceived);
         }
@@ -27,14 +28,16 @@ namespace HelloTizenBot.Dialogs
         [LuisIntent("Greetings")]
         public async Task Greetings(IDialogContext context, LuisResult result)
         {
-            await context.PostAsync($"Greeting Intent: We are analyzing your message: '{result.Query}'...");
+            //await context.PostAsync($"Greeting Intent: We are analyzing your message: '{result.Query}'...");
+            await context.PostAsync($"Greeting Intent: We are analyzing your message...");
             context.Wait(this.MessageReceived);
         }
 
         [LuisIntent("Home")]
         public async Task Home(IDialogContext context, LuisResult result)
         {
-            await context.PostAsync($"Greeting Intent: We are analyzing your message: '{result.Query}'...");
+            //await context.PostAsync($"Greeting Intent: We are analyzing your message: '{result.Query}'...");
+            await context.PostAsync($"Home Intent: We are analyzing your message...");
             context.Wait(this.MessageReceived);
         }
     }
