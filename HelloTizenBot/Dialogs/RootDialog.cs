@@ -46,7 +46,7 @@ namespace HelloTizenBot.Dialogs
                         var entities = $"(";
                         foreach (var entity in luisResult.Entities)
                         {
-                            entities += $"{entity.Entity}, {entity.Type}, {entity.Score} ";
+                            entities += $"{entity.Entity}, {entity.Type}, {entity.Score} = ";
                         }
                         entities += $")";
                         await context.PostAsync($"Top Intent: Home\n | {entities} | What should I do for you?");
