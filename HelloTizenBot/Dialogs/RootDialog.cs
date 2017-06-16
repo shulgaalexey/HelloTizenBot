@@ -46,10 +46,10 @@ namespace HelloTizenBot.Dialogs
                         var entities = $"(";
                         foreach (var entity in luisResult.Entities)
                         {
-                            entities += entity.Type + "," + entity.Score + " ";
+                            entities += $"{entity.Entity}, {entity.Type}, {entity.Score} ";
                         }
                         entities += $")";
-                        await context.PostAsync($"Top Intent: Home\n| {entities} | What should I do for you?");
+                        await context.PostAsync($"Top Intent: Home\n | {entities} | What should I do for you?");
                         break;
                     default:
                         await context.PostAsync($"Top Intent: UNKNOWN\nPlease repeat your query. I could not recognize your intent...");
