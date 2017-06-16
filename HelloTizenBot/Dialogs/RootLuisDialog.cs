@@ -17,7 +17,8 @@ namespace HelloTizenBot.Dialogs
     {
         public Task StartAsync(IDialogContext context)
         {
-            context.Wait(MessageReceivedAsync);
+            //context.Wait(MessageReceivedAsync);
+            context.Wait(this.MessageReceived);
 
             return Task.CompletedTask;
         }
