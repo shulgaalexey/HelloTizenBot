@@ -11,7 +11,7 @@ using Microsoft.Bot.Connector;
 
 namespace HelloTizenBot.Dialogs
 {
-    [LuisModel("64f464ab-0f2a-4412-9be1-af3e7fca947b", "d14db6f08ac845cda0873c80437bbb97&")]
+    [LuisModel("64f464ab-0f2a-4412-9be1-af3e7fca947b", "d14db6f08ac845cda0873c80437bbb97")]
     [Serializable]
     public class RootLuisDialog : LuisDialog<object>
     {

@@ -18,8 +18,17 @@ namespace HelloTizenBot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                //await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
-                await Conversation.SendAsync(activity, () => new Dialogs.RootLuisDialog());
+                try
+                {
+                    await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
+                    //await Conversation.SendAsync(activity, () => new Dialogs.RootLuisDialog());
+
+                }
+                catch (System.Exception exc)
+                {
+                    activity.Text += $"{exc}";
+                    await Conversation.SendAsync(activity, () => new Dialogs.ErrorDialog());
+                }
             }
             else
             {
