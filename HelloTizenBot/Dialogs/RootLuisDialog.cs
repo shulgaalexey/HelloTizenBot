@@ -37,8 +37,8 @@ namespace HelloTizenBot.Dialogs
         {
             //await context.PostAsync($"Greeting Intent: We are analyzing your message: '{result.Query}'...");
             await context.PostAsync($"Greeting Intent: We are analyzing your message...");
-            //context.Wait(this.MessageReceived);
-            context.Wait(MessageReceivedAsync);
+            context.Wait(this.MessageReceived);
+            //context.Wait(MessageReceivedAsync);
         }
 
         [LuisIntent("Home")]
