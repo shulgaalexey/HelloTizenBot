@@ -14,16 +14,15 @@ namespace HelloTizenBot.Dialogs
         {
             context.Wait(MessageReceivedAsync);
 
+            //await context.PostAsync($"Hey boss, how are you doing?");
+
             return Task.CompletedTask;
         }
 
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
-
-            // calculate something for us to return
-            int length = (activity.Text ?? string.Empty).Length;
-
+            
             await context.PostAsync($"Starting Luis query");
 
             try
@@ -43,6 +42,9 @@ namespace HelloTizenBot.Dialogs
                     case "Greeting":
                         await context.PostAsync($"Greetings.. How may I serve you?");
                         break;
+                    case "Home":
+                        await context.PostAsync($"Home.. What should I do for you?");
+                        break;
                     default:
                         await context.PostAsync($"Please repeat your query. I could not recognize your intent...");
                         break;
@@ -54,7 +56,7 @@ namespace HelloTizenBot.Dialogs
             }
 
             // return our reply to the user
-            await context.PostAsync($"You sent {activity.Text} which was {length} characters");
+            //await context.PostAsync($"You sent {activity.Text} which was {length} characters");
             context.Wait(MessageReceivedAsync);
             //await context.Forward(new RootLuisDialog(), MessageReceivedAsync, activity, System.Threading.CancellationToken.None);
         }

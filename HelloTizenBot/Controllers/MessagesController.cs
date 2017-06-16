@@ -20,8 +20,8 @@ namespace HelloTizenBot
             {
                 try
                 {
-                    //await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
-                    await Conversation.SendAsync(activity, () => new Dialogs.RootLuisDialog());
+                    await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
+                    //await Conversation.SendAsync(activity, () => new Dialogs.RootLuisDialog());
 
                 }
                 catch (System.Exception exc)
