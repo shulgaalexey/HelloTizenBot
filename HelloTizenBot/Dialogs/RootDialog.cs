@@ -31,7 +31,7 @@ namespace HelloTizenBot.Dialogs
                 LuisService luis = new LuisService(new LuisModelAttribute("86684636-488d-48b3-a4c6-233ef496d3d1", "5f3fca65f0a64d68ab6d4d474b1b0fa6"));
                 var luisResult = await luis.QueryAsync(activity.Text, System.Threading.CancellationToken.None);
 
-                await context.PostAsync($"Luis Result received .. Processing intents");
+                //await context.PostAsync($"Luis Result received .. Processing intents");
 
                 switch (luisResult.TopScoringIntent.Intent)
                 {
