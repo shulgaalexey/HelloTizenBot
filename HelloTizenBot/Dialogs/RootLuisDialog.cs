@@ -15,13 +15,13 @@ namespace HelloTizenBot.Dialogs
     [Serializable]
     public class RootLuisDialog : LuisDialog<object>
     {
-        public Task StartAsync(IDialogContext context)
+        /*public Task StartAsync(IDialogContext context)
         {
             //context.Wait(MessageReceivedAsync);
             context.Wait(this.MessageReceived);
 
             return Task.CompletedTask;
-        }
+        }*/
         
         [LuisIntent("")]
         [LuisIntent("None")]
