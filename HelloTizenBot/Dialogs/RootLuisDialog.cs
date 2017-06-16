@@ -22,7 +22,7 @@ namespace HelloTizenBot.Dialogs
             return Task.CompletedTask;*/
             string message = $"Hi man";
             await context.PostAsync(message);
-            context.Wait(this.MessageReceived);
+            //context.Wait(this.MessageReceived);
         }
         
         [LuisIntent("")]
@@ -32,7 +32,7 @@ namespace HelloTizenBot.Dialogs
             //string message = $"Sorry, I did not understand '{result.Query}'. Type 'help' if you need assistance.";
             string message = $"Sorry, I did not understand";
             await context.PostAsync(message);
-            context.Wait(this.MessageReceived);
+            //context.Wait(this.MessageReceived);
         }
 
         [LuisIntent("Greetings")]
@@ -40,8 +40,7 @@ namespace HelloTizenBot.Dialogs
         {
             //await context.PostAsync($"Greeting Intent: We are analyzing your message: '{result.Query}'...");
             await context.PostAsync($"Greeting Intent: We are analyzing your message...");
-            context.Wait(this.MessageReceived);
-            //context.Wait(MessageReceivedAsync);
+            //context.Wait(this.MessageReceived);
         }
 
         [LuisIntent("Home")]
@@ -49,7 +48,7 @@ namespace HelloTizenBot.Dialogs
         {
             //await context.PostAsync($"Greeting Intent: We are analyzing your message: '{result.Query}'...");
             await context.PostAsync($"Home Intent: We are analyzing your message...");
-            context.Wait(this.MessageReceived);
+            //context.Wait(this.MessageReceived);
         }
     }
 }
