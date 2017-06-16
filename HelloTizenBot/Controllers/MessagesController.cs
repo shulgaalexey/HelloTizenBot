@@ -10,6 +10,8 @@ namespace HelloTizenBot
     [BotAuthentication]
     public class MessagesController : ApiController
     {
+        Dialogs.RootDialog RD = null;
+
         /// <summary>
         /// POST: api/Messages
         /// Receive a message from a user and reply to it
@@ -20,7 +22,11 @@ namespace HelloTizenBot
             {
                 try
                 {
-                    await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
+                    if (RD == null)
+                        RD = new Dialogs.RootDialog();
+                    await Conversation.SendAsync(activity, () => RD);
+
+                    //await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
                     //await Conversation.SendAsync(activity, () => new Dialogs.RootLuisDialog());
 
                 }
