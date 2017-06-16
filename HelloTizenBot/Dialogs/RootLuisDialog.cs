@@ -15,6 +15,13 @@ namespace HelloTizenBot.Dialogs
     [Serializable]
     public class RootLuisDialog : LuisDialog<object>
     {
+        public Task StartAsync(IDialogContext context)
+        {
+            context.Wait(MessageReceivedAsync);
+
+            return Task.CompletedTask;
+        }
+        
         [LuisIntent("")]
         [LuisIntent("None")]
         public async Task None(IDialogContext context, LuisResult result)
@@ -30,7 +37,8 @@ namespace HelloTizenBot.Dialogs
         {
             //await context.PostAsync($"Greeting Intent: We are analyzing your message: '{result.Query}'...");
             await context.PostAsync($"Greeting Intent: We are analyzing your message...");
-            context.Wait(this.MessageReceived);
+            //context.Wait(this.MessageReceived);
+            context.Wait(MessageReceivedAsync);
         }
 
         [LuisIntent("Home")]
